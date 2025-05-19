@@ -88,5 +88,5 @@ const SignInSignUp = () => {
     </div>
   );
 };
-// This component is a sign-in/sign-up form with a background animation and a gradient effect. It uses Tailwind CSS for styling and has a responsive design. The form includes input fields for email, password, and an optional full name field for sign-up. It also has buttons for Google, Apple, and Facebook sign-in options.
+
 export default SignInSignUp;
