@@ -52,6 +52,16 @@ const SignInSignUp = () => {
                 placeholder="Password"
                 className="p-4 w-full bg-blue-900/30 rounded-xl border border-blue-700/50 text-white placeholder-blue-300/50 outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-transparent transition-all"
               />
+              {!isSignUp && (
+                <div className="text-right">
+                  <a
+                    href="#"
+                    className="text-sm text-yellow-300 hover:text-yellow-400 transition-colors"
+                  >
+                    Forgot password?
+                  </a>
+                </div>
+              )}
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
