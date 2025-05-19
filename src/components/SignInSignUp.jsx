@@ -2,6 +2,8 @@ import React from "react";
 
 const SignInSignUp = () => {
   const [isSignUp, setIsSignUp] = React.useState(false);
+  const [showPassword, setShowPassword] = React.useState(false);
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-linear-135 from-blue-950 via blue-900 to blue-800 p-8">
       <div className="absolute top-0 left-0 w-full h-full">
@@ -44,12 +46,23 @@ const SignInSignUp = () => {
                 className="p-4 w-full bg-blue-900/30 rounded-xl border border-blue-700/50 text-white placeholder-blue-300/50 outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-transparent transition-all"
               />
             </div>
-            <div className="group">
+            <div className="group relative">
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 placeholder="Password"
                 className="p-4 w-full bg-blue-900/30 rounded-xl border border-blue-700/50 text-white placeholder-blue-300/50 outline-none focus:ring-2 focus:ring-yellow-400/50 focus:border-transparent transition-all"
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-blue-300/50 hover:text-yellow-400 transition-colors"
+              >
+                {showPassword ? (
+                  <i className="bx bx-hide text-xl"></i>
+                ) : (
+                  <i className="bx bx-show text-xl"></i>
+                )}
+              </button>
             </div>
             <button className="group w-full p-4 mt-6 bg-gradient-to-r from-yellow-500 to-yellow-400 text-blue-950 rounded-xl font-bold shadow-lg hover:shadow-yellow-400/40 overflow-hidden transform-style-3d transform hover: -translate-y-0.5 hover:scale-104 hover:translate-z-20 transition-all duration-300">
               <span className="relative z-10 pointer-events-auto ">
